@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	int A, B, i, sum=0;
+	
+	cin >> A >> B;
+	for(i = A; i < B+1; i++){
+		if(i == B){
+			cout << i;
+			sum += i;
+			break;
+		}
+		cout << i << " + ";
+		sum += i;
+	}
+	cout <<  " = " << sum;
+	return 0;
+}
