@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+int main(){
+	int n, i, a, max=INT_MIN, min=INT_MAX;
+	
+	ifstream fin;
+	fin.open("input.txt");
+	
+	ofstream fout;
+	fout.open("output.txt");
+	
+	fin >> n;
+	
+	for(i =0; i<n; i++){
+		fin>>a;
+		if(a>max){
+			max=a;
+		}if(a<min){
+			min=a;
+		}
+	}
+	
+	fout<<max-min;
+	
+	return 0;
+}
