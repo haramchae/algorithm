@@ -1,0 +1,23 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+	char a[50];
+	int num=0, divisor=0, i;
+	cin>>a;
+
+	for(i=0; a[i]!='\0'; i++){
+		if(47<a[i] && a[i]<58){
+			num = num*10 + (a[i]-48);
+		}
+	}
+	
+	for(int j=1; j<num+1; j++){
+		if((num%j) == 0){
+			divisor++;
+		}
+	}
+	
+	cout<<num<<"\n"<<divisor;  
+	return 0;
+} 
