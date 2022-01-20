@@ -1,0 +1,22 @@
+#include<iostream>
+using namespace std;
+
+int A[50001];
+int main(){
+	int i, j, N;
+
+	cin>>N;
+	
+	for(i=1; i<=N; i++){
+		for(j=i; j<=N; j=j+i){
+				A[j]++;		
+		}
+	}
+	
+	for(i=1; i<=N; i++){
+		cout<<A[i]<<" ";
+	}
+	return 0;
+} 
+
+
