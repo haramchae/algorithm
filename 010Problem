@@ -1,0 +1,37 @@
+#include<iostream>
+using namespace std;
+
+int digit_sum(int x){
+	int sum=0, temp =0;
+	while(x>0){
+		temp = x%10;
+		sum +=temp;
+		x = x/10;
+	}
+	return sum;
+}
+
+int main(){
+	int i, N, num, temp, max=INT_MIN, ans;
+
+	cin>>N;
+	
+	for(i=0; i<N; i++){
+		cin>>num;
+		temp = digit_sum(num);
+
+		if(temp>max){
+			max = temp;
+			ans = num;
+		}else if(temp == max){
+			if(num>ans){
+				ans = num;
+			}
+		}
+	}
+	
+	cout<< ans;
+	return 0;
+} 
+
+
