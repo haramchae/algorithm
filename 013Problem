@@ -1,0 +1,30 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+int ch[10];
+
+int main(){
+	char arr[101];
+	int i, temp, max=INT_MIN, ans;
+	
+	cin>>arr;
+	
+	for(i=0; i<strlen(arr); i++){
+		temp = arr[i]-48;
+		ch[temp]++;
+	}
+	
+	for(i=0; i<10; i++){
+		if(ch[i]>=max){
+			max=ch[i];
+			ans=i;
+		}
+	}
+  
+	cout<<ans;
+  
+	return 0;
+} 
+
+
