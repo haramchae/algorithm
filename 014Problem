@@ -1,0 +1,45 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+int reverse(int x){
+	int ans=0, temp;
+	while(x>0){
+		temp=x%10;
+		ans = ans*10 + temp;
+		x=x/10;
+	}
+	return ans;
+}
+
+bool isPrime(int x){
+	bool ans = true;
+	if(x==1){
+		return false;
+	}
+	for(int i=2; i<x; i++ ){
+		if(x%i==0){
+			ans = false;
+			break;
+		}
+	}
+	return ans;
+}
+
+int main(){
+	int n, num, i, temp;	
+	cin>>n;
+	
+	for(i=1; i<n; i++){
+		cin>>num;
+		temp = reverse(num);
+		if(isPrime(temp)){
+			cout<< temp <<" ";
+		}
+	}
+	
+
+	return 0;
+} 
+
+
