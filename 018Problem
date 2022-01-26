@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+int main(){
+	
+	int i, n, target, temp, cnt, max = INT_MIN;
+	
+	cin>>n;
+	cin>>target;
+	
+	for(i=0; i<n; i++){
+		cin>>temp;
+		if(temp>target){
+			cnt++;
+		}else if(temp<target){
+			cnt=0;
+		}
+		if(cnt>max){
+			max=cnt;
+		}
+	}
+	
+	if(max==0){
+		cout<<"-1";
+	}else{
+		cout<<max;
+	}
+
+
+	return 0;
+} 
