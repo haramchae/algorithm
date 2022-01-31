@@ -1,0 +1,32 @@
+#include<iostream>
+using namespace std;
+
+int ary[100001];
+int main(){
+	int i, n, pre, now, cnt=1, max=INT_MIN;
+
+	cin>>n;
+	
+	for(i=0; i<n; i++){
+		cin>>ary[i];
+	}
+	
+	for(i=0; i<n-1; i++){
+		pre=ary[i];
+		now=ary[i+1];
+		if(now>=pre){
+			cnt++;
+		}else{
+			cnt=1;
+		}
+		if(cnt>max){
+			max=cnt;
+		}
+	}
+
+	cout<<max;
+  
+	return 0;
+} 
+
+
