@@ -1,0 +1,40 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+int main(){
+	
+	int i, j, temp, n; 
+
+	cin>>n;
+	
+	vector<int> cnt(n+1);
+	
+	for(i=2; i<=n; i++){
+		temp=i;
+		j=2;
+		while(true){
+			if(temp%j==0){
+				temp=temp/j;
+				cnt[j]++;
+			}
+			else{
+				j++;
+			}
+			if(temp==1){
+				break;
+			}
+		}
+	}
+
+	cout<<n<<"!"<< " = ";
+	for(i=2;i<=n;i++){
+		if(cnt[i]!=0){
+			cout<<cnt[i]<<" ";
+		}
+	}
+	
+	return 0;
+} 
+
+
