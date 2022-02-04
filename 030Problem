@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
+
+int main(){
+
+	ios_base::sync_with_stdio(false);
+	
+	int i, lt=1, cur, rt, k=1, res=0, n;
+	
+	cin>>n; 
+	
+	while(lt!=0){
+		lt=n/(k*10);
+		cur=(n/k)%10;
+		rt=n%k;
+		
+		if(cur>3){
+			res=res+(lt+1)*k;
+		}else if(cur<3){
+			res=res+(lt*k);
+		}else if(cur==3){
+			res=res+(lt*k)+(rt+1);
+		}
+		k=k*10;
+	}
+	
+	cout<<res;
+	return 0;
+} 
+
+
