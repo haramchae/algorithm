@@ -1,0 +1,40 @@
+#include<iostream>
+using namespace std;
+
+int a[101], b[101], c[300];
+
+int main(){
+
+int i, j, num, num2, pos1, pos2, pos3;
+cin>>num;
+
+for(i = 1; i<=num; i++){
+	cin>>a[i];
+}
+
+cin>>num2;
+for(i = 1; i<=num2; i++){
+	cin>>b[i];
+}
+
+while(pos1<=num && pos2<=num2){
+	if(a[pos1]<b[pos2]){
+		c[pos3++]=a[pos1++];
+	}else{
+		c[pos3++]=b[pos2++];
+	}
+}
+
+while(pos1<=num){
+	c[pos3++]=a[pos1++];
+}
+while(pos2<=num2){
+	c[pos3++]=b[pos2++];
+}
+
+for(i=1; i<pos3; i++){
+	cout<< c[i] <<" ";
+}
+
+ return 0;	
+}      
