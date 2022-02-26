@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+int a[1001];
+int main(){
+
+	int i, j, sum, num, share, temp, size;
+
+	cin>>num;
+
+	for(i=2; i<num; i++){
+
+		sum = 0;
+		for(j=1; j<=i; j++){
+			a[j]=j;
+			sum +=j;
+		}
+		if(sum>num){
+			continue;
+		}else{
+				temp = num - sum;
+		}
+		if(temp%i==0){
+			share = temp /i;
+		}else{
+			continue;
+		}for(j=1; j<=i; j++){
+			a[j]+=share;
+		}
+		cout<<a[1];
+	
+		for(j=2; j<=i; j++){
+			cout<< " + " << a[j];
+		}
+		size++;
+		cout<< " = " <<num <<"\n";
+	}
+
+	cout<<size;
+	
+ 	return 0;	
+}      
