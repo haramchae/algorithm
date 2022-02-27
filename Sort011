@@ -1,0 +1,34 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int main(){
+	int i, size, num, lt, mid, rt;
+	cin>>size;
+	cin>>num;
+	lt = 0;
+	rt = size-1;
+
+	vector<int> a(size);
+	
+	for(i=0; i<size; i++){
+		cin>>a[i];
+	}
+	
+	sort(a.begin(), a.end());
+
+	while(lt<=rt){
+		mid = (lt+rt)/2;
+		if(a[mid]==num){
+			cout<<mid+1;
+			return 0;
+		}else if(a[mid]>num){
+			rt = mid -1;
+		}else{
+			lt = mid + 1;
+		}
+	}
+
+	return 0;	
+}      
