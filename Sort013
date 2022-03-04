@@ -1,0 +1,49 @@
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+
+int count(int mid, int num, int a[]) {
+	int i, pos=a[1], cnt = 1;
+
+	for (int i = 2; i <= num; i++) {
+		if (a[i]-pos >= mid) {
+			cnt++;
+			pos = a[i];
+		}
+	}
+	return cnt;
+}
+
+int main() {
+
+	int i=0, num=0, lt=0, mid = 0, rt=0, ans=0, horse=0;
+
+	cin >> num;
+	cin >> horse;
+	lt = 1;
+	
+	int *a = new int[num+1];
+
+	for (i = 1; i <= num; i++) {
+		cin>>a[i];
+	}
+	
+	sort(a+1, a+num+1);
+	rt=a[num];
+
+	while (lt <= rt) {
+		mid = (lt + rt) / 2;
+		if (count(mid,num,a) >= horse) {
+			ans = mid;
+			lt = mid + 1;
+		}
+		else {
+			rt = mid - 1;
+		}
+	}
+
+	cout<<ans;
+
+	return 0;
+}
